@@ -32,6 +32,7 @@ function programingTheame() {
         enableBasicAutocompletion: true,
         enableSnippets: true,
         enableLiveAutocompletion: true,
+        useSvgGutterIcons: true
     });
 };
 

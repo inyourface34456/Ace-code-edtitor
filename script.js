@@ -15,7 +15,7 @@ function textTheame() {
         useWorker: true,
         scrollPastEnd: .5,
         fontSize: 16,
-        // fontFamily: "Helvetica"  there is an issue regarding non-monospace fonts.  untill that gets fixed, thi
+        fontFamily: "Helvetica"  //there is an issue regarding non-monospace fonts.  untill that gets fixed, this should remain comented out
     });
 };
 

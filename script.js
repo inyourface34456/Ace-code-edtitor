@@ -8,6 +8,8 @@ function getCurrentMode() {
     return e.session.getMode().$id;
 }
 
+e.getSession().setUseWrapMode(true);
+
 function textTheame() {
     e.setTheme("ace/theme/chrome");
     e.setOptions({

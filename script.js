@@ -1,4 +1,4 @@
-"use strict";
+use strict;
 var e = ace.edit("editor");
 var modelist = ace.require("ace/ext/language_tools");
 var beautify = ace.require("ace/ext/beautify");
@@ -103,6 +103,28 @@ e.commands.addCommand({
         editor.setValue(result, -1);
     },
     readOnly: false
+});
+
+e.commands.addCommand({
+    name: 'Download',
+    bindKey: {
+        win: 'Ctrl-Shift-S',
+        mac: 'Command-Shift-S'
+    },
+    exec: function (editor) {
+        var filename = prompt('What do you want to name the file?');
+        if (filename) {
+            var text = editor.getValue();
+            var blob = new Blob([text], { type: 'text/plain' });
+            var link = document.createElement('a');
+            link.href = window.URL.createObjectURL(blob);
+            link.download = filename.endsWith('.txt') ? filename : filename + '.txt';
+            link.click();
+            window.URL.revokeObjectURL(link.href);
+            alert('File downloaded!');
+        }
+    },
+    readOnly: true
 });
 
 e.getSession().setMode("ace/mode/text");

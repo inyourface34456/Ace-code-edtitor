@@ -1,4 +1,3 @@
-use strict;
 var e = ace.edit("editor");
 var modelist = ace.require("ace/ext/language_tools");
 var beautify = ace.require("ace/ext/beautify");
